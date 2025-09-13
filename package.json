@@ -1,0 +1,44 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "Simple api to resize images",
+  "homepage": "https://github.com/mahdi-shouib/Image-Processing-API#readme",
+  "bugs": {
+    "url": "https://github.com/mahdi-shouib/Image-Processing-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahdi-shouib/Image-Processing-API.git"
+  },
+  "license": "ISC",
+  "author": "Mahdi Shouib",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write src/**/*.{ts,json}",
+    "lint": "eslint src/**/*.ts",
+    "prebuild": "npm run format && npm run lint",
+    "build": "tsc",
+    "test": "npm run build && jasmine",
+    "start": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jasmine": "^5.1.9",
+    "@types/node": "^24.3.0",
+    "@types/supertest": "^6.0.3",
+    "eslint": "^9.34.0",
+    "jasmine": "^5.10.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "sharp": "^0.34.3"
+  }
+}
