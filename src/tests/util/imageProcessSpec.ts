@@ -4,9 +4,7 @@ import fs from 'fs/promises';
 describe('Testing image processing functions', () => {
 	describe('Test if files exist or not', () => {
 		it('base image exists', async () => {
-			expect(await imageProcess.CheckFullImage('icelandwaterfall.jpg')).toBe(
-				true,
-			);
+			expect(await imageProcess.CheckFullImage('nature.jpg')).toBe(true);
 		});
 
 		it('not a real image doesnt exist', async () => {
@@ -22,11 +20,9 @@ describe('Testing image processing functions', () => {
 		});
 
 		it('cached image exists', async () => {
-			await imageProcess.ResizeImage('palmtunnel.jpg', 500, 500);
-			expect(await imageProcess.IsImageCached('palmtunnel.jpg', 500, 500)).toBe(
-				true,
-			);
-			await fs.unlink('./assets/thumb/500w_500h_palmtunnel.jpg');
+			await imageProcess.ResizeImage('p.jpg', 500, 500);
+			expect(await imageProcess.IsImageCached('p.jpg', 500, 500)).toBe(true);
+			await fs.unlink('./assets/thumb/500w_500h_p.jpg');
 		});
 	});
 
@@ -38,7 +34,7 @@ describe('Testing image processing functions', () => {
 		});
 
 		it('should delete all cached files', async () => {
-			const img = 'santamonica.jpg';
+			const img = 'nature.jpg';
 			await imageProcess.ResizeImage(img, 1000, 500);
 			await imageProcess.ResizeImage(img, 800, 300);
 			await imageProcess.ResizeImage(img, 200, 700);

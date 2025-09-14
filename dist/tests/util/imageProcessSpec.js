@@ -17,7 +17,7 @@ const promises_1 = __importDefault(require("fs/promises"));
 describe('Testing image processing functions', () => {
     describe('Test if files exist or not', () => {
         it('base image exists', () => __awaiter(void 0, void 0, void 0, function* () {
-            expect(yield imageProcess_1.default.CheckFullImage('icelandwaterfall.jpg')).toBe(true);
+            expect(yield imageProcess_1.default.CheckFullImage('nature.jpg')).toBe(true);
         }));
         it('not a real image doesnt exist', () => __awaiter(void 0, void 0, void 0, function* () {
             expect(yield imageProcess_1.default.CheckFullImage('notreal.file')).toBe(false);
@@ -28,9 +28,9 @@ describe('Testing image processing functions', () => {
             expect(yield imageProcess_1.default.IsImageCached('notreal.file', 200, 200)).toBe(false);
         }));
         it('cached image exists', () => __awaiter(void 0, void 0, void 0, function* () {
-            yield imageProcess_1.default.ResizeImage('palmtunnel.jpg', 500, 500);
-            expect(yield imageProcess_1.default.IsImageCached('palmtunnel.jpg', 500, 500)).toBe(true);
-            yield promises_1.default.unlink('./assets/thumb/500w_500h_palmtunnel.jpg');
+            yield imageProcess_1.default.ResizeImage('p.jpg', 500, 500);
+            expect(yield imageProcess_1.default.IsImageCached('p.jpg', 500, 500)).toBe(true);
+            yield promises_1.default.unlink('./assets/thumb/500w_500h_p.jpg');
         }));
     });
     describe('Test deleting images', () => {
@@ -40,7 +40,7 @@ describe('Testing image processing functions', () => {
             })).not.toThrow();
         }));
         it('should delete all cached files', () => __awaiter(void 0, void 0, void 0, function* () {
-            const img = 'santamonica.jpg';
+            const img = 'nature.jpg';
             yield imageProcess_1.default.ResizeImage(img, 1000, 500);
             yield imageProcess_1.default.ResizeImage(img, 800, 300);
             yield imageProcess_1.default.ResizeImage(img, 200, 700);
