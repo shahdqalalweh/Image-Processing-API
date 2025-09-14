@@ -1,21 +1,12 @@
 {
   "name": "image-processing-api",
   "version": "1.0.0",
-  "description": "Simple api to resize images",
-  "homepage": "https://github.com/mahdi-shouib/Image-Processing-API#readme",
-  "bugs": {
-    "url": "https://github.com/mahdi-shouib/Image-Processing-API/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mahdi-shouib/Image-Processing-API.git"
-  },
+  "description": "Simple API to resize images",
   "license": "ISC",
-  "author": "Mahdi Shouib",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write src/**/*.{ts,json}",
+    "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/**/*.ts",
     "prebuild": "npm run format && npm run lint",
     "build": "tsc",
